@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    {
+      "id": "tamagotchi",
+      "name": "Tamagotchi",
+      "version": "0.1.0",
+      "description": "A desktop pet in the side dock that reacts to your terminal: it perks up on focus and cheers when the bell rings. A Tier-1 widget demo.",
+      "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/tamagotchi.zip",
+      "permissions": []
+    },
+    {
+      "id": "relay",
+      "name": "Session Relay",
+      "version": "0.1.0",
+      "description": "A demo of the inter-plugin message bus: subscribes to the 'chat' topic and logs what other plugins publish.",
+      "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/relay.zip",
+      "permissions": []
+    }
+  ]
+}
