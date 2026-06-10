@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# github-hosted + read-only token: a fork PR runs safely in an isolated VM, so
+# contributors' plugins get validated without touching any self-hosted runner
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: catalog is consistent (committed state)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $idx = Get-Content index.json -Raw | ConvertFrom-Json
+          $tracked = git ls-files
+          foreach ($p in $idx.plugins) {
+            $zip = "dist/$($p.id)-$($p.version).zip"
+            if ($tracked -notcontains $zip) { throw "$($p.id): $zip is not committed - run scripts/build-zips.ps1 and commit dist/" }
+            if (-not (Test-Path "$($p.id)/plugin.json")) { throw "$($p.id): missing source folder $($p.id)/plugin.json" }
+          }
+          Get-ChildItem -Directory | Where-Object { Test-Path (Join-Path $_.FullName 'plugin.json') } | ForEach-Object {
+            if ($idx.plugins.id -notcontains $_.Name) { throw "$($_.Name): not listed in index.json - run scripts/build-zips.ps1" }
+          }
+          Write-Host "catalog OK ($($idx.plugins.Count) plugins)"
+
+      - uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8 # stable
+        with:
+          toolchain: stable
+
+      - name: every plugin builds + packs
+        shell: pwsh
+        run: ./scripts/build-zips.ps1
