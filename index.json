@@ -3,8 +3,8 @@
     {
       "id": "tamagotchi",
       "name": "Tamagotchi",
-      "version": "0.1.0",
-      "description": "A desktop pet in the side dock that reacts to your terminal: it perks up on focus and cheers when the bell rings. A Tier-1 widget demo.",
+      "version": "0.2.0",
+      "description": "An animated desktop pet for the side dock: it idles, blinks, hops, and naps, perks up when you switch panes, bounces when the bell rings, and you can click it to pet and feed it. A Tier-2 graphics demo.",
       "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/tamagotchi.zip",
       "permissions": []
     },

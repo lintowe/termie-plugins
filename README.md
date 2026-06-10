@@ -11,7 +11,7 @@ downloads the `url`, unpacks it, validates the manifest `id`, and installs it un
 
 | id | name | what it shows |
 |----|------|---------------|
-| `tamagotchi` | Tamagotchi | a dock pet reacting to focus + bell (Tier-1 widget demo) |
+| `tamagotchi` | Tamagotchi | an animated dock pet you can pet/feed; reacts to focus + bell (Tier-2 graphics demo) |
 | `relay` | Session Relay | the inter-plugin bus, logging the `chat` topic |
 
 The security model is trust-the-store: a plugin runs as a separate process (crash-isolated, not sandboxed), so only vetted plugins belong here.
