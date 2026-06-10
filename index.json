@@ -1,19 +1,19 @@
 {
   "plugins": [
     {
-      "id": "tamagotchi",
-      "name": "Tamagotchi",
-      "version": "0.2.0",
-      "description": "An animated desktop pet for the side dock: it idles, blinks, hops, and naps, perks up when you switch panes, bounces when the bell rings, and you can click it to pet and feed it. A Tier-2 graphics demo.",
-      "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/tamagotchi.zip",
-      "permissions": []
-    },
-    {
       "id": "relay",
       "name": "Session Relay",
       "version": "0.1.0",
       "description": "A demo of the inter-plugin message bus: subscribes to the 'chat' topic and logs what other plugins publish.",
-      "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/relay.zip",
+      "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/dist/relay-0.1.0.zip",
+      "permissions": []
+    },
+    {
+      "id": "tamagotchi",
+      "name": "Tamagotchi",
+      "version": "0.2.0",
+      "description": "An animated desktop pet for the side dock: it idles, blinks, hops, and naps, perks up when you switch panes, bounces when the bell rings, and you can click it to pet and feed it. A Tier-2 graphics demo.",
+      "url": "https://raw.githubusercontent.com/lintowe/termie-plugins/main/dist/tamagotchi-0.2.0.zip",
       "permissions": []
     }
   ]

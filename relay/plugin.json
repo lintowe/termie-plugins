@@ -1,0 +1,9 @@
+{
+  "id": "relay",
+  "name": "Session Relay",
+  "version": "0.1.0",
+  "api_version": 1,
+  "description": "A demo of the inter-plugin message bus: subscribes to the 'chat' topic and logs what other plugins publish.",
+  "entry": { "cmd": "relay.exe", "args": [] },
+  "permissions": []
+}
